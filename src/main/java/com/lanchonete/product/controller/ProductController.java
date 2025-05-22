@@ -2,7 +2,6 @@ package com.lanchonete.product.controller;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.lanchonete.product.model.Product;
-import com.lanchonete.product.model.dto.ProductDTO;
 import com.lanchonete.product.repository.ProductRepository;
 import com.lanchonete.product.service.ProductService;
 
@@ -32,20 +30,9 @@ public class ProductController {
 	@Autowired 
 	private ProductService pService;
 	
-	//String name, String description,	Double price, Long amount, String category
 	@GetMapping
-	public ResponseEntity<List<ProductDTO>> getAll(){
-		List<Product> products = pRepository.findAll();
-		List<ProductDTO> newproduct = products.stream()
-				.map(product -> new ProductDTO(
-						product.getName(),
-						product.getDescription(), 
-						product.getPrice(),
-						product.getAmount(), 
-						product.getCategory()
-						 ))
-				.collect(Collectors.toList());
-		return ResponseEntity.ok(newproduct);
+	public ResponseEntity<List<Product>> getAll(){
+		return ResponseEntity.ok(pRepository.findAll());
 	}
 	
 	@PostMapping

@@ -5,9 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class LanchonetesApplication {
-
-	public static void main(String[] args) {
-		SpringApplication.run(LanchonetesApplication.class, args);
-	}
-
+    public static void main(String[] args) {
+        SpringApplication.run(LanchonetesApplication.class, args);
+    }
 }

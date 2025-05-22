@@ -59,12 +59,6 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-	    	<groupId>com.mercadopago</groupId>
-		    <artifactId>dx-java</artifactId>
-		    <version>1.8.0</version>
-		</dependency>
-
 	</dependencies>
 
 	<build>
@@ -75,5 +69,5 @@
 			</plugin>
 		</plugins>
 	</build>
-	
+
 </project>
